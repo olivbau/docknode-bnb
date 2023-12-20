@@ -3,7 +3,6 @@
 ## Metrics
 
 - `https://yourdomain.com:9101/metrics`
-- `https://yourdomain.com:9102/metrics`
 
 ## Install
 
