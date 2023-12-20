@@ -16,11 +16,10 @@ apt install -y git screen
 # install docker https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 ```
 
-1. Clone the repository and
+1. Clone the repository
 
 ```bash
-git clone https://github.com/olivbau/docknode-bnb.git
-cd docknode-bnb
+git clone https://github.com/olivbau/docknode-bnb.git && cd docknode-bnb
 ```
 
 2. Configure environement variables
