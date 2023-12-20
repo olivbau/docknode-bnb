@@ -7,29 +7,11 @@ networks:
 volumes:
   caddy_data:
   caddy_config:
-  data:
-    driver: local
-    driver_opts:
-      type: "none"
-      o: "bind"
-      device: "./bnb/data"
 
 services:
-  init:
-    image: alpine
-    command:
-      - /bin/sh
-      - -c
-      - |
-        chown -R 1000:1000 /data
-
-        echo "done grany data directory permission"
-    volumes:
-      - data:/data
-
   fullnode:
     image: "ghcr.io/bnb-chain/bsc:latest"
-    user: 1000:1000
+    user: 100:100
     restart: unless-stopped
     expose:
       - 8545
@@ -38,10 +20,11 @@ services:
       - "30303:30303"
       - "30311:30311"
     volumes:
-      - data:/data
       - ./bnb/config:/bsc/config:ro
+      - ./bnb/db:/datadir:rw
     command: >
       --bsc
+      --datadir /datadir
       --http --http.vhosts=* --http.addr 0.0.0.0 --http.port 8545
       --syncmode snap
     networks:
