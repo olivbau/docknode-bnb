@@ -21,9 +21,10 @@ services:
       - "30311:30311"
     volumes:
       - ./bnb/config:/bsc/config:ro
-      - ./bnb/db:/bsc/.ethereum:rw
+      - ./bnb/db:/datadir:rw
     command: >
       --bsc
+      --datadir /datadir
       --http --http.vhosts=* --http.addr 0.0.0.0 --http.port 8545
       --syncmode snap
     networks:
