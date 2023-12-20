@@ -14,13 +14,17 @@ services:
     restart: unless-stopped
     expose:
       - 8545
+      - 6060
     ports:
       - "30303:30303"
       - "30311:30311"
     volumes:
       - ./bnb/config:/bsc/config:ro
       - ./bnb/db:/bsc/node:rw
-    command: ["--help"]
+    command: >
+      --bsc
+      --http --http.vhosts=* --http.addr 0.0.0.0 --http.port 8545
+      --syncmode snap
     networks:
       - docknode-bnb
 
