@@ -11,7 +11,7 @@ volumes:
 services:
   fullnode:
     image: "ghcr.io/bnb-chain/bsc:latest"
-    user: 1001:1001
+    user: 1000:1000
     restart: unless-stopped
     expose:
       - 8545
