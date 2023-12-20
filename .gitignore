@@ -1,0 +1,10 @@
+*DS_Store
+.vs/
+.vscode/
+.idea/
+
+# .env file
+.env
+
+bnb/db/*
+!bnb/db/.gitkeep
