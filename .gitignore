@@ -8,3 +8,6 @@
 
 bnb/db/*
 !bnb/db/.gitkeep
+
+bnb/data/*
+!bnb/data/.gitkeep
